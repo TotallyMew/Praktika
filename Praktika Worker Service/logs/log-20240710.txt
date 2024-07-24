@@ -1,0 +1,137 @@
+2024-07-10 11:16:36.305 +03:00 [INF] Service1 instance created.
+2024-07-10 11:16:36.358 +03:00 [INF] Windows Background Service started.
+2024-07-10 11:16:36.470 +03:00 [DBG] TaskSchedulingThreadPool configured with max concurrency of 10 and TaskScheduler ThreadPoolTaskScheduler.
+2024-07-10 11:16:36.541 +03:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-07-10 11:16:36.542 +03:00 [INF] Quartz Scheduler created
+2024-07-10 11:16:36.543 +03:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-07-10 11:16:36.544 +03:00 [INF] RAMJobStore initialized.
+2024-07-10 11:16:36.546 +03:00 [INF] Quartz Scheduler 3.11.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-07-10 11:16:36.547 +03:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-07-10 11:16:36.548 +03:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-07-10 11:16:36.555 +03:00 [INF] Adding 1 jobs, 2 triggers.
+2024-07-10 11:16:36.564 +03:00 [INF] Adding job: DEFAULT.ExtractInformationJob
+2024-07-10 11:16:36.566 +03:00 [DBG] Scheduling job: DEFAULT.ExtractInformationJob with trigger: DEFAULT.ExtractInformationJob-trigger
+2024-07-10 11:16:36.577 +03:00 [DBG] Scheduling job: DEFAULT.ExtractInformationJob with trigger: DEFAULT.ExtractInformationJob-startup
+2024-07-10 11:16:36.581 +03:00 [DBG] Rescheduling job: DEFAULT.ExtractInformationJob with updated trigger: DEFAULT.ExtractInformationJob-trigger
+2024-07-10 11:16:36.586 +03:00 [DBG] Rescheduling job: DEFAULT.ExtractInformationJob with updated trigger: DEFAULT.ExtractInformationJob-startup
+2024-07-10 11:16:36.590 +03:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-07-10 11:16:36.595 +03:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-07-10 11:16:36.610 +03:00 [DBG] Batch acquisition of 1 triggers
+2024-07-10 11:16:36.623 +03:00 [DBG] Batch acquisition of 0 triggers
+2024-07-10 11:16:36.629 +03:00 [DBG] Calling Execute on job DEFAULT.ExtractInformationJob
+2024-07-10 11:16:36.727 +03:00 [INF] ExtractInformationJob started.
+2024-07-10 11:16:37.906 +03:00 [INF] Information has been taken and converted.
+2024-07-10 11:16:37.908 +03:00 [INF] BSS notification sent.
+2024-07-10 11:16:37.911 +03:00 [DBG] Trigger instruction : DeleteTrigger
+2024-07-10 11:16:37.915 +03:00 [DBG] Deleting trigger
+2024-07-10 11:16:37.916 +03:00 [DBG] Batch acquisition of 1 triggers
+2024-07-10 11:16:40.008 +03:00 [DBG] Calling Execute on job DEFAULT.ExtractInformationJob
+2024-07-10 11:16:40.008 +03:00 [DBG] Batch acquisition of 0 triggers
+2024-07-10 11:16:40.011 +03:00 [INF] ExtractInformationJob started.
+2024-07-10 11:16:40.090 +03:00 [INF] Information has been taken and converted.
+2024-07-10 11:16:40.092 +03:00 [INF] BSS notification sent.
+2024-07-10 11:16:40.094 +03:00 [DBG] Trigger instruction : NoInstruction
+2024-07-10 11:16:40.095 +03:00 [DBG] Batch acquisition of 1 triggers
+2024-07-10 11:16:50.002 +03:00 [DBG] Batch acquisition of 0 triggers
+2024-07-10 11:16:50.002 +03:00 [DBG] Calling Execute on job DEFAULT.ExtractInformationJob
+2024-07-10 11:16:50.005 +03:00 [INF] ExtractInformationJob started.
+2024-07-10 11:16:50.081 +03:00 [INF] Information has been taken and converted.
+2024-07-10 11:16:50.083 +03:00 [INF] BSS notification sent.
+2024-07-10 11:16:50.085 +03:00 [DBG] Trigger instruction : NoInstruction
+2024-07-10 11:16:50.086 +03:00 [DBG] Batch acquisition of 1 triggers
+2024-07-10 11:17:00.011 +03:00 [DBG] Calling Execute on job DEFAULT.ExtractInformationJob
+2024-07-10 11:17:00.011 +03:00 [DBG] Batch acquisition of 0 triggers
+2024-07-10 11:17:00.014 +03:00 [INF] ExtractInformationJob started.
+2024-07-10 11:17:00.084 +03:00 [INF] Information has been taken and converted.
+2024-07-10 11:17:00.087 +03:00 [INF] BSS notification sent.
+2024-07-10 11:17:00.091 +03:00 [DBG] Trigger instruction : NoInstruction
+2024-07-10 11:17:00.093 +03:00 [DBG] Batch acquisition of 1 triggers
+2024-07-10 11:23:08.049 +03:00 [INF] Service1 instance created.
+2024-07-10 11:23:08.094 +03:00 [INF] Windows Background Service started.
+2024-07-10 11:23:08.120 +03:00 [DBG] TaskSchedulingThreadPool configured with max concurrency of 10 and TaskScheduler ThreadPoolTaskScheduler.
+2024-07-10 11:23:08.135 +03:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-07-10 11:23:08.143 +03:00 [INF] Quartz Scheduler created
+2024-07-10 11:23:08.144 +03:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-07-10 11:23:08.145 +03:00 [INF] RAMJobStore initialized.
+2024-07-10 11:23:08.146 +03:00 [INF] Quartz Scheduler 3.11.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-07-10 11:23:08.147 +03:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-07-10 11:23:08.148 +03:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-07-10 11:23:08.156 +03:00 [INF] Adding 1 jobs, 2 triggers.
+2024-07-10 11:23:08.157 +03:00 [INF] Adding job: DEFAULT.ExtractInformationJob
+2024-07-10 11:23:08.159 +03:00 [DBG] Scheduling job: DEFAULT.ExtractInformationJob with trigger: DEFAULT.ExtractInformationJob-trigger
+2024-07-10 11:23:08.170 +03:00 [DBG] Scheduling job: DEFAULT.ExtractInformationJob with trigger: DEFAULT.ExtractInformationJob-startup
+2024-07-10 11:23:08.173 +03:00 [DBG] Rescheduling job: DEFAULT.ExtractInformationJob with updated trigger: DEFAULT.ExtractInformationJob-trigger
+2024-07-10 11:23:08.176 +03:00 [DBG] Rescheduling job: DEFAULT.ExtractInformationJob with updated trigger: DEFAULT.ExtractInformationJob-startup
+2024-07-10 11:23:08.179 +03:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-07-10 11:23:08.181 +03:00 [DBG] Batch acquisition of 1 triggers
+2024-07-10 11:23:08.183 +03:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-07-10 11:23:08.193 +03:00 [DBG] Batch acquisition of 0 triggers
+2024-07-10 11:23:08.202 +03:00 [DBG] Calling Execute on job DEFAULT.ExtractInformationJob
+2024-07-10 11:23:08.213 +03:00 [INF] ExtractInformationJob started.
+2024-07-10 11:23:08.877 +03:00 [INF] Information has been taken and converted.
+2024-07-10 11:23:08.879 +03:00 [INF] BSS notification sent.
+2024-07-10 11:23:08.882 +03:00 [DBG] Trigger instruction : DeleteTrigger
+2024-07-10 11:23:08.887 +03:00 [DBG] Deleting trigger
+2024-07-10 11:23:08.890 +03:00 [DBG] Batch acquisition of 1 triggers
+2024-07-10 11:23:10.002 +03:00 [DBG] Batch acquisition of 0 triggers
+2024-07-10 11:23:10.002 +03:00 [DBG] Calling Execute on job DEFAULT.ExtractInformationJob
+2024-07-10 11:23:10.006 +03:00 [INF] ExtractInformationJob started.
+2024-07-10 11:23:10.087 +03:00 [INF] Information has been taken and converted.
+2024-07-10 11:23:10.089 +03:00 [INF] BSS notification sent.
+2024-07-10 11:23:10.091 +03:00 [DBG] Trigger instruction : NoInstruction
+2024-07-10 11:23:10.093 +03:00 [DBG] Batch acquisition of 1 triggers
+2024-07-10 11:24:57.785 +03:00 [INF] Service1 instance created.
+2024-07-10 11:24:57.819 +03:00 [INF] Windows Background Service started.
+2024-07-10 11:24:57.843 +03:00 [DBG] TaskSchedulingThreadPool configured with max concurrency of 10 and TaskScheduler ThreadPoolTaskScheduler.
+2024-07-10 11:24:57.856 +03:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-07-10 11:24:57.865 +03:00 [INF] Quartz Scheduler created
+2024-07-10 11:24:57.867 +03:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-07-10 11:24:57.868 +03:00 [INF] RAMJobStore initialized.
+2024-07-10 11:24:57.869 +03:00 [INF] Quartz Scheduler 3.11.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-07-10 11:24:57.870 +03:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-07-10 11:24:57.871 +03:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-07-10 11:24:57.878 +03:00 [INF] Adding 1 jobs, 2 triggers.
+2024-07-10 11:24:57.880 +03:00 [INF] Adding job: DEFAULT.ExtractInformationJob
+2024-07-10 11:24:57.882 +03:00 [DBG] Scheduling job: DEFAULT.ExtractInformationJob with trigger: DEFAULT.ExtractInformationJob-trigger
+2024-07-10 11:24:57.893 +03:00 [DBG] Scheduling job: DEFAULT.ExtractInformationJob with trigger: DEFAULT.ExtractInformationJob-startup
+2024-07-10 11:24:57.896 +03:00 [DBG] Rescheduling job: DEFAULT.ExtractInformationJob with updated trigger: DEFAULT.ExtractInformationJob-trigger
+2024-07-10 11:24:57.900 +03:00 [DBG] Rescheduling job: DEFAULT.ExtractInformationJob with updated trigger: DEFAULT.ExtractInformationJob-startup
+2024-07-10 11:24:57.903 +03:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-07-10 11:24:57.905 +03:00 [DBG] Batch acquisition of 1 triggers
+2024-07-10 11:24:57.909 +03:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-07-10 11:24:57.919 +03:00 [DBG] Batch acquisition of 0 triggers
+2024-07-10 11:24:57.929 +03:00 [DBG] Calling Execute on job DEFAULT.ExtractInformationJob
+2024-07-10 11:24:57.941 +03:00 [INF] ExtractInformationJob started.
+2024-07-10 11:24:58.562 +03:00 [INF] Information has been taken and converted.
+2024-07-10 11:24:58.564 +03:00 [INF] BSS notification sent.
+2024-07-10 11:24:58.567 +03:00 [DBG] Trigger instruction : DeleteTrigger
+2024-07-10 11:24:58.571 +03:00 [DBG] Deleting trigger
+2024-07-10 11:24:58.572 +03:00 [DBG] Batch acquisition of 1 triggers
+2024-07-10 11:25:00.008 +03:00 [DBG] Batch acquisition of 0 triggers
+2024-07-10 11:25:00.009 +03:00 [DBG] Calling Execute on job DEFAULT.ExtractInformationJob
+2024-07-10 11:25:00.016 +03:00 [INF] ExtractInformationJob started.
+2024-07-10 11:25:00.098 +03:00 [INF] Information has been taken and converted.
+2024-07-10 11:25:00.099 +03:00 [INF] BSS notification sent.
+2024-07-10 11:25:00.101 +03:00 [DBG] Trigger instruction : NoInstruction
+2024-07-10 11:25:00.102 +03:00 [DBG] Batch acquisition of 1 triggers
+2024-07-10 11:25:10.014 +03:00 [DBG] Batch acquisition of 0 triggers
+2024-07-10 11:25:10.014 +03:00 [DBG] Calling Execute on job DEFAULT.ExtractInformationJob
+2024-07-10 11:25:10.022 +03:00 [INF] ExtractInformationJob started.
+2024-07-10 11:25:10.111 +03:00 [INF] Information has been taken and converted.
+2024-07-10 11:25:10.113 +03:00 [INF] BSS notification sent.
+2024-07-10 11:25:10.114 +03:00 [DBG] Trigger instruction : NoInstruction
+2024-07-10 11:25:10.116 +03:00 [DBG] Batch acquisition of 1 triggers
+2024-07-10 11:25:20.000 +03:00 [DBG] Calling Execute on job DEFAULT.ExtractInformationJob
+2024-07-10 11:25:20.000 +03:00 [DBG] Batch acquisition of 0 triggers
+2024-07-10 11:25:20.003 +03:00 [INF] ExtractInformationJob started.
+2024-07-10 11:25:20.061 +03:00 [INF] Information has been taken and converted.
+2024-07-10 11:25:20.064 +03:00 [INF] BSS notification sent.
+2024-07-10 11:25:20.065 +03:00 [DBG] Trigger instruction : NoInstruction
+2024-07-10 11:25:20.067 +03:00 [DBG] Batch acquisition of 1 triggers
+2024-07-10 11:25:30.009 +03:00 [DBG] Batch acquisition of 0 triggers
+2024-07-10 11:25:30.009 +03:00 [DBG] Calling Execute on job DEFAULT.ExtractInformationJob
+2024-07-10 11:25:30.013 +03:00 [INF] ExtractInformationJob started.
+2024-07-10 11:25:30.061 +03:00 [INF] Information has been taken and converted.
+2024-07-10 11:25:30.064 +03:00 [INF] BSS notification sent.
+2024-07-10 11:25:30.065 +03:00 [DBG] Trigger instruction : NoInstruction
+2024-07-10 11:25:30.066 +03:00 [DBG] Batch acquisition of 1 triggers

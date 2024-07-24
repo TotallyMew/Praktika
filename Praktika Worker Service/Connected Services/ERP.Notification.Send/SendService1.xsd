@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.bss.biz/NotificationService/Core/data" elementFormDefault="qualified" targetNamespace="http://www.bss.biz/NotificationService/Core/data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/BSS.NotificationService.Api.ServiceInterface.Core.Data" />
+  <xs:complexType name="Paging">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GetTotalCount" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="UsePaging" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Paging" nillable="true" type="tns:Paging" />
+  <xs:complexType name="BaseData">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BSS.NotificationService.Api.ServiceInterface.Core.Data" minOccurs="0" name="DataModification" type="q1:DataModification" />
+      <xs:element minOccurs="0" name="RecordVersion" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseData" nillable="true" type="tns:BaseData" />
+</xs:schema>

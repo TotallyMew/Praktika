@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Praktia_WEB_API.Models.NotificationSmsBillingInformation>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Notifications</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <h1>Notifications</h1>
+    <form method="get" action="">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate">
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate">
+        <button type="submit">Search</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Phone Number</th>
+                <th>Environment Id</th>
+                <th>Registration Info</th>
+                <th>Action Date</th>
+                <th>Action Type</th>
+                <th>Sms Provider Name</th>
+                <th>Sms Provider Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var notification in Model)
+            {
+                <tr>
+                    <td>@notification.Id</td>
+                    <td>@notification.PhoneNumber</td>
+                    <td>@notification.EnvironmentId</td>
+                    <td>@notification.RegistrationInfo</td>
+                    <td>@notification.ActionDate</td>
+                    <td>@notification.ActionType</td>
+                    <td>@notification.SmsProviderName</td>
+                    <td>@notification.SmsProviderInfo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

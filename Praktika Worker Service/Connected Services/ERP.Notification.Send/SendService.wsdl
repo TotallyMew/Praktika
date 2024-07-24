@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="http://www.bss.biz/NotificationService/Send/services" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="SendService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="SendService1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <gzip:GZipEncoding xmlns:gzip="http://schemas.microsoft.com/ws/06/2004/mspolicy/netgzip1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="SendService2_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="SendService3_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.bss.biz/NotificationService/Send/services" location="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="SendService" type="i0:ISendService">
+    <wsp:PolicyReference URI="#SendService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendNotification">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/SendNotification" style="document" />
+      <wsdl:input name="SendNotificationRequest">
+        <soap12:header message="i0:SendNotificationRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:SendNotificationRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendNotificationResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationFailedMessages">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationFailedMessages" style="document" />
+      <wsdl:input name="FindNotificationFailedMessagesRequest">
+        <soap12:header message="i0:FindNotificationFailedMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:FindNotificationFailedMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationFailedMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationSentMessages">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationSentMessages" style="document" />
+      <wsdl:input name="FindNotificationSentMessagesRequest">
+        <soap12:header message="i0:FindNotificationSentMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:FindNotificationSentMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationSentMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationQueuedMessages">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationQueuedMessages" style="document" />
+      <wsdl:input name="FindNotificationQueuedMessagesRequest">
+        <soap12:header message="i0:FindNotificationQueuedMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:FindNotificationQueuedMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationQueuedMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationAllMessages">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationAllMessages" style="document" />
+      <wsdl:input name="FindNotificationAllMessagesRequest">
+        <soap12:header message="i0:FindNotificationAllMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:FindNotificationAllMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationAllMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailedNotificationMessage">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetFailedNotificationMessage" style="document" />
+      <wsdl:input name="GetFailedNotificationMessageRequest">
+        <soap12:header message="i0:GetFailedNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:GetFailedNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetFailedNotificationMessageResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueuedNotificationMessage">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetQueuedNotificationMessage" style="document" />
+      <wsdl:input name="GetQueuedNotificationMessageRequest">
+        <soap12:header message="i0:GetQueuedNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:GetQueuedNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetQueuedNotificationMessageResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSentNotificationMessage">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetSentNotificationMessage" style="document" />
+      <wsdl:input name="GetSentNotificationMessageRequest">
+        <soap12:header message="i0:GetSentNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:GetSentNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSentNotificationMessageResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationMessage">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetNotificationMessage" style="document" />
+      <wsdl:input name="GetNotificationMessageRequest">
+        <soap12:header message="i0:GetNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:GetNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetNotificationMessageResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendService1" type="i0:ISendService">
+    <wsp:PolicyReference URI="#SendService1_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendNotification">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/SendNotification" style="document" />
+      <wsdl:input name="SendNotificationRequest">
+        <soap12:header message="i0:SendNotificationRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:SendNotificationRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendNotificationResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationFailedMessages">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationFailedMessages" style="document" />
+      <wsdl:input name="FindNotificationFailedMessagesRequest">
+        <soap12:header message="i0:FindNotificationFailedMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:FindNotificationFailedMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationFailedMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationSentMessages">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationSentMessages" style="document" />
+      <wsdl:input name="FindNotificationSentMessagesRequest">
+        <soap12:header message="i0:FindNotificationSentMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:FindNotificationSentMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationSentMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationQueuedMessages">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationQueuedMessages" style="document" />
+      <wsdl:input name="FindNotificationQueuedMessagesRequest">
+        <soap12:header message="i0:FindNotificationQueuedMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:FindNotificationQueuedMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationQueuedMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationAllMessages">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationAllMessages" style="document" />
+      <wsdl:input name="FindNotificationAllMessagesRequest">
+        <soap12:header message="i0:FindNotificationAllMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:FindNotificationAllMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationAllMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailedNotificationMessage">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetFailedNotificationMessage" style="document" />
+      <wsdl:input name="GetFailedNotificationMessageRequest">
+        <soap12:header message="i0:GetFailedNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:GetFailedNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetFailedNotificationMessageResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueuedNotificationMessage">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetQueuedNotificationMessage" style="document" />
+      <wsdl:input name="GetQueuedNotificationMessageRequest">
+        <soap12:header message="i0:GetQueuedNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:GetQueuedNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetQueuedNotificationMessageResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSentNotificationMessage">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetSentNotificationMessage" style="document" />
+      <wsdl:input name="GetSentNotificationMessageRequest">
+        <soap12:header message="i0:GetSentNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:GetSentNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSentNotificationMessageResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationMessage">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetNotificationMessage" style="document" />
+      <wsdl:input name="GetNotificationMessageRequest">
+        <soap12:header message="i0:GetNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:GetNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetNotificationMessageResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendService2" type="i0:ISendService">
+    <wsp:PolicyReference URI="#SendService2_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendNotification">
+      <soap:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/SendNotification" style="document" />
+      <wsdl:input name="SendNotificationRequest">
+        <soap:header message="i0:SendNotificationRequest_Headers" part="ProjectData" use="literal" />
+        <soap:header message="i0:SendNotificationRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendNotificationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationFailedMessages">
+      <soap:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationFailedMessages" style="document" />
+      <wsdl:input name="FindNotificationFailedMessagesRequest">
+        <soap:header message="i0:FindNotificationFailedMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap:header message="i0:FindNotificationFailedMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationFailedMessagesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationSentMessages">
+      <soap:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationSentMessages" style="document" />
+      <wsdl:input name="FindNotificationSentMessagesRequest">
+        <soap:header message="i0:FindNotificationSentMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap:header message="i0:FindNotificationSentMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationSentMessagesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationQueuedMessages">
+      <soap:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationQueuedMessages" style="document" />
+      <wsdl:input name="FindNotificationQueuedMessagesRequest">
+        <soap:header message="i0:FindNotificationQueuedMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap:header message="i0:FindNotificationQueuedMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationQueuedMessagesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationAllMessages">
+      <soap:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationAllMessages" style="document" />
+      <wsdl:input name="FindNotificationAllMessagesRequest">
+        <soap:header message="i0:FindNotificationAllMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap:header message="i0:FindNotificationAllMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationAllMessagesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailedNotificationMessage">
+      <soap:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetFailedNotificationMessage" style="document" />
+      <wsdl:input name="GetFailedNotificationMessageRequest">
+        <soap:header message="i0:GetFailedNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap:header message="i0:GetFailedNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetFailedNotificationMessageResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueuedNotificationMessage">
+      <soap:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetQueuedNotificationMessage" style="document" />
+      <wsdl:input name="GetQueuedNotificationMessageRequest">
+        <soap:header message="i0:GetQueuedNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap:header message="i0:GetQueuedNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetQueuedNotificationMessageResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSentNotificationMessage">
+      <soap:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetSentNotificationMessage" style="document" />
+      <wsdl:input name="GetSentNotificationMessageRequest">
+        <soap:header message="i0:GetSentNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap:header message="i0:GetSentNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSentNotificationMessageResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationMessage">
+      <soap:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetNotificationMessage" style="document" />
+      <wsdl:input name="GetNotificationMessageRequest">
+        <soap:header message="i0:GetNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap:header message="i0:GetNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetNotificationMessageResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendService3" type="i0:ISendService">
+    <wsp:PolicyReference URI="#SendService3_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/websocket" />
+    <wsdl:operation name="SendNotification">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/SendNotification" style="document" />
+      <wsdl:input name="SendNotificationRequest">
+        <soap12:header message="i0:SendNotificationRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:SendNotificationRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendNotificationResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationFailedMessages">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationFailedMessages" style="document" />
+      <wsdl:input name="FindNotificationFailedMessagesRequest">
+        <soap12:header message="i0:FindNotificationFailedMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:FindNotificationFailedMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationFailedMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationSentMessages">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationSentMessages" style="document" />
+      <wsdl:input name="FindNotificationSentMessagesRequest">
+        <soap12:header message="i0:FindNotificationSentMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:FindNotificationSentMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationSentMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationQueuedMessages">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationQueuedMessages" style="document" />
+      <wsdl:input name="FindNotificationQueuedMessagesRequest">
+        <soap12:header message="i0:FindNotificationQueuedMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:FindNotificationQueuedMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationQueuedMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationAllMessages">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationAllMessages" style="document" />
+      <wsdl:input name="FindNotificationAllMessagesRequest">
+        <soap12:header message="i0:FindNotificationAllMessagesRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:FindNotificationAllMessagesRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindNotificationAllMessagesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailedNotificationMessage">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetFailedNotificationMessage" style="document" />
+      <wsdl:input name="GetFailedNotificationMessageRequest">
+        <soap12:header message="i0:GetFailedNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:GetFailedNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetFailedNotificationMessageResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueuedNotificationMessage">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetQueuedNotificationMessage" style="document" />
+      <wsdl:input name="GetQueuedNotificationMessageRequest">
+        <soap12:header message="i0:GetQueuedNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:GetQueuedNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetQueuedNotificationMessageResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSentNotificationMessage">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetSentNotificationMessage" style="document" />
+      <wsdl:input name="GetSentNotificationMessageRequest">
+        <soap12:header message="i0:GetSentNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:GetSentNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSentNotificationMessageResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationMessage">
+      <soap12:operation soapAction="http://www.bss.biz/NotificationService/Send/services/ISendService/GetNotificationMessage" style="document" />
+      <wsdl:input name="GetNotificationMessageRequest">
+        <soap12:header message="i0:GetNotificationMessageRequest_Headers" part="ProjectData" use="literal" />
+        <soap12:header message="i0:GetNotificationMessageRequest_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetNotificationMessageResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

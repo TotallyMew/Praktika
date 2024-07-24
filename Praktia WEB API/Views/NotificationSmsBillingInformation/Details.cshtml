@@ -1,0 +1,47 @@
+﻿@model Praktia_WEB_API.Models.NotificationSmsBillingInformation
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Notification Details</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <h1>Notification Details</h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <th>Phone Number</th>
+            <td>@Model.PhoneNumber</td>
+        </tr>
+        <tr>
+            <th>Environment Id</th>
+            <td>@Model.EnvironmentId</td>
+        </tr>
+        <tr>
+            <th>Registration Info</th>
+            <td>@Model.RegistrationInfo</td>
+        </tr>
+        <tr>
+            <th>Action Date</th>
+            <td>@Model.ActionDate</td>
+        </tr>
+        <tr>
+            <th>Action Type</th>
+            <td>@Model.ActionType</td>
+        </tr>
+        <tr>
+            <th>Sms Provider Name</th>
+            <td>@Model.SmsProviderName</td>
+        </tr>
+        <tr>
+            <th>Sms Provider Info</th>
+            <td>@Model.SmsProviderInfo</td>
+        </tr>
+    </table>
+</body>
+</html>

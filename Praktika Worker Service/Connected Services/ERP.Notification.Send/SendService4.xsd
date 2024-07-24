@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.bss.biz/NotificationService/Send/data" elementFormDefault="qualified" targetNamespace="http://www.bss.biz/NotificationService/Send/data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BSS.NotificationService.Api.ServiceInterface.Notification.Data" />
+  <xs:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BSS.NotificationService.Api.ServiceInterface.Data" />
+  <xs:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd6" namespace="http://www.bss.biz/NotificationService/Core/data" />
+  <xs:complexType name="Notification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BSS.NotificationService.Api.ServiceInterface.Notification.Data" minOccurs="0" name="Attachments" nillable="true" type="q1:ArrayOfAttachment" />
+      <xs:element minOccurs="0" name="BatchId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BSS.NotificationService.Api.ServiceInterface.Notification.Data" minOccurs="0" name="BodyAttachments" nillable="true" type="q2:ArrayOfAttachment" />
+      <xs:element minOccurs="0" name="BodyType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryMethodCfgNr" type="xs:short" />
+      <xs:element minOccurs="0" name="EventName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImportanceCfgNr" type="xs:short" />
+      <xs:element minOccurs="0" name="KeywordsValue" nillable="true" type="tns:ArrayOfKeywordValue" />
+      <xs:element minOccurs="0" name="NotificationNr" type="xs:int" />
+      <xs:element minOccurs="0" name="PriorityCfgNr" type="xs:short" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BSS.NotificationService.Api.ServiceInterface.Data" minOccurs="0" name="Receivers" nillable="true" type="q3:ArrayOfReceiver" />
+      <xs:element minOccurs="0" name="RecordCreatedByUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SenderInfoText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SmsProviderInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SmsProviderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SmtpConfigurationNr" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TemplateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeFrom" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TimeTo" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Notification" nillable="true" type="tns:Notification" />
+  <xs:complexType name="ArrayOfKeywordValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordValue" nillable="true" type="tns:KeywordValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordValue" nillable="true" type="tns:ArrayOfKeywordValue" />
+  <xs:complexType name="KeywordValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordValue" nillable="true" type="tns:KeywordValue" />
+  <xs:complexType name="ArrayOfReceiverFailedNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReceiverFailedNotification" nillable="true" type="tns:ReceiverFailedNotification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReceiverFailedNotification" nillable="true" type="tns:ArrayOfReceiverFailedNotification" />
+  <xs:complexType name="ReceiverFailedNotification">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ReceiverNotificationSummary">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FailureReason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NotificationFailedByUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NotificationFailedDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NotificationFailedMessageNr" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReceiverFailedNotification" nillable="true" type="tns:ReceiverFailedNotification" />
+  <xs:complexType name="ReceiverNotificationSummary">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://www.bss.biz/NotificationService/Core/data" base="q4:BaseData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BatchId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BodyType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryMethodCfgNr" type="xs:short" />
+          <xs:element minOccurs="0" name="ImportanceCfgNr" type="xs:short" />
+          <xs:element minOccurs="0" name="NotificationNr" type="xs:int" />
+          <xs:element minOccurs="0" name="NotificationReceiverNr" type="xs:int" />
+          <xs:element minOccurs="0" name="ReceiverInfoText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecordCreatedByUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecordCreationDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RecordLastUpdateDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RecordLastUpdatedByUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SenderInfoText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReceiverNotificationSummary" nillable="true" type="tns:ReceiverNotificationSummary" />
+  <xs:complexType name="ArrayOfReceiverSentNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReceiverSentNotification" nillable="true" type="tns:ReceiverSentNotification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReceiverSentNotification" nillable="true" type="tns:ArrayOfReceiverSentNotification" />
+  <xs:complexType name="ReceiverSentNotification">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ReceiverNotificationSummary">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NotificationSentByUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NotificationSentDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NotificationSentMessageNr" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReceiverSentNotification" nillable="true" type="tns:ReceiverSentNotification" />
+  <xs:complexType name="ArrayOfReceiverQueuedNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReceiverQueuedNotification" nillable="true" type="tns:ReceiverQueuedNotification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReceiverQueuedNotification" nillable="true" type="tns:ArrayOfReceiverQueuedNotification" />
+  <xs:complexType name="ReceiverQueuedNotification">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ReceiverNotificationSummary">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NotificationQueueMessageNr" type="xs:int" />
+          <xs:element minOccurs="0" name="TimeFrom" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="TimeTo" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReceiverQueuedNotification" nillable="true" type="tns:ReceiverQueuedNotification" />
+  <xs:complexType name="ArrayOfReceiverNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReceiverNotification" nillable="true" type="tns:ReceiverNotification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReceiverNotification" nillable="true" type="tns:ArrayOfReceiverNotification" />
+  <xs:complexType name="ReceiverNotification">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://www.bss.biz/NotificationService/Core/data" base="q5:BaseData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryMethodCfgNr" type="xs:short" />
+          <xs:element minOccurs="0" name="FailureReason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NotificationReceiverNr" type="xs:int" />
+          <xs:element minOccurs="0" name="NotificationSendStatusCfgNr" type="xs:short" />
+          <xs:element minOccurs="0" name="ReceiverInfoText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReceiverReferencedPrimaryKeyNr" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ReceiverReferencedTableCfgNr" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="SendingDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReceiverNotification" nillable="true" type="tns:ReceiverNotification" />
+</xs:schema>

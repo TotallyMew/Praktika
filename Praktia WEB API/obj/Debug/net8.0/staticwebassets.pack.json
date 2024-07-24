@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\augustas cesnavicius\\source\\repos\\Praktika Worker Service\\Praktia WEB API\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Praktia WEB API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Praktia WEB API.props",
+      "PackagePath": "build\\Praktia WEB API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Praktia WEB API.props",
+      "PackagePath": "buildMultiTargeting\\Praktia WEB API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Praktia WEB API.props",
+      "PackagePath": "buildTransitive\\Praktia WEB API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

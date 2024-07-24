@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.bss.biz/NotificationService/Send/messages" elementFormDefault="qualified" targetNamespace="http://www.bss.biz/NotificationService/Send/messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd2" namespace="http://www.bss.biz/NotificationService/Send/data" />
+  <xs:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd6" namespace="http://www.bss.biz/NotificationService/Core/data" />
+  <xs:element name="SendNotificationRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.bss.biz/NotificationService/Send/data" minOccurs="0" name="Notification" nillable="true" type="q1:Notification" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendNotificationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindNotificationFailedMessagesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DateFrom" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DateTo" nillable="true" type="xs:dateTime" />
+        <xs:element xmlns:q2="http://www.bss.biz/NotificationService/Core/data" minOccurs="0" name="Paging" nillable="true" type="q2:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindNotificationFailedMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://www.bss.biz/NotificationService/Send/data" minOccurs="0" name="ReceiverFailedNotifications" nillable="true" type="q3:ArrayOfReceiverFailedNotification" />
+        <xs:element minOccurs="0" name="TotalRecordCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindNotificationSentMessagesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DateFrom" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DateTo" nillable="true" type="xs:dateTime" />
+        <xs:element xmlns:q4="http://www.bss.biz/NotificationService/Core/data" minOccurs="0" name="Paging" nillable="true" type="q4:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindNotificationSentMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://www.bss.biz/NotificationService/Send/data" minOccurs="0" name="ReceiverSentNotifications" nillable="true" type="q5:ArrayOfReceiverSentNotification" />
+        <xs:element minOccurs="0" name="TotalRecordCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindNotificationQueuedMessagesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DateFrom" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DateTo" nillable="true" type="xs:dateTime" />
+        <xs:element xmlns:q6="http://www.bss.biz/NotificationService/Core/data" minOccurs="0" name="Paging" nillable="true" type="q6:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindNotificationQueuedMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://www.bss.biz/NotificationService/Send/data" minOccurs="0" name="ReceiverQueuedNotifications" nillable="true" type="q7:ArrayOfReceiverQueuedNotification" />
+        <xs:element minOccurs="0" name="TotalRecordCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindNotificationAllMessagesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://www.bss.biz/NotificationService/Core/data" minOccurs="0" name="Paging" nillable="true" type="q8:Paging" />
+        <xs:element minOccurs="0" name="ReferencedPrimaryKeyNr" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="ReferencedTableCfgNr" nillable="true" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindNotificationAllMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.bss.biz/NotificationService/Send/data" minOccurs="0" name="ReceiverNotifications" nillable="true" type="q9:ArrayOfReceiverNotification" />
+        <xs:element minOccurs="0" name="TotalRecordCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFailedNotificationMessageRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NotificationFailedMessageNr" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFailedNotificationMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://www.bss.biz/NotificationService/Send/data" minOccurs="0" name="FailedNotification" nillable="true" type="q10:ReceiverFailedNotification" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueuedNotificationMessageRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NotificationQueuedMessageNr" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueuedNotificationMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.bss.biz/NotificationService/Send/data" minOccurs="0" name="QueuedNotification" nillable="true" type="q11:ReceiverQueuedNotification" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentNotificationMessageRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NotificationSentMessageNr" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentNotificationMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.bss.biz/NotificationService/Send/data" minOccurs="0" name="SentNotification" nillable="true" type="q12:ReceiverSentNotification" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotificationMessageRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NotificationReceiverNr" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotificationMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://www.bss.biz/NotificationService/Send/data" minOccurs="0" name="Notification" nillable="true" type="q13:Notification" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

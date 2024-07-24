@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="http://tempuri.org/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.bss.biz/NotificationService/Send/services" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="SendService" targetNamespace="http://www.bss.biz/NotificationService/Send/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.bss.biz/NotificationService/Send/services/Imports">
+      <xsd:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd0" namespace="http://www.bss.biz/NotificationService/Send/messages" />
+      <xsd:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd5" namespace="http://www.bss.biz/NotificationService/Send/services" />
+      <xsd:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd2" namespace="http://www.bss.biz/NotificationService/Send/data" />
+      <xsd:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BSS.NotificationService.Api.ServiceInterface.Notification.Data" />
+      <xsd:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BSS.NotificationService.Api.ServiceInterface.Data" />
+      <xsd:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd6" namespace="http://www.bss.biz/NotificationService/Core/data" />
+      <xsd:import schemaLocation="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/BSS.NotificationService.Api.ServiceInterface.Core.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SendNotificationRequest">
+    <wsdl:part xmlns:q1="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q1:SendNotificationRequest" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationRequest_Headers">
+    <wsdl:part name="ProjectData" element="tns:ProjectData" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationResponse">
+    <wsdl:part xmlns:q2="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q2:SendNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindNotificationFailedMessagesRequest">
+    <wsdl:part xmlns:q3="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q3:FindNotificationFailedMessagesRequest" />
+  </wsdl:message>
+  <wsdl:message name="FindNotificationFailedMessagesRequest_Headers">
+    <wsdl:part name="ProjectData" element="tns:ProjectData" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="FindNotificationFailedMessagesResponse">
+    <wsdl:part xmlns:q4="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q4:FindNotificationFailedMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindNotificationSentMessagesRequest">
+    <wsdl:part xmlns:q5="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q5:FindNotificationSentMessagesRequest" />
+  </wsdl:message>
+  <wsdl:message name="FindNotificationSentMessagesRequest_Headers">
+    <wsdl:part name="ProjectData" element="tns:ProjectData" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="FindNotificationSentMessagesResponse">
+    <wsdl:part xmlns:q6="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q6:FindNotificationSentMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindNotificationQueuedMessagesRequest">
+    <wsdl:part xmlns:q7="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q7:FindNotificationQueuedMessagesRequest" />
+  </wsdl:message>
+  <wsdl:message name="FindNotificationQueuedMessagesRequest_Headers">
+    <wsdl:part name="ProjectData" element="tns:ProjectData" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="FindNotificationQueuedMessagesResponse">
+    <wsdl:part xmlns:q8="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q8:FindNotificationQueuedMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindNotificationAllMessagesRequest">
+    <wsdl:part xmlns:q9="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q9:FindNotificationAllMessagesRequest" />
+  </wsdl:message>
+  <wsdl:message name="FindNotificationAllMessagesRequest_Headers">
+    <wsdl:part name="ProjectData" element="tns:ProjectData" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="FindNotificationAllMessagesResponse">
+    <wsdl:part xmlns:q10="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q10:FindNotificationAllMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFailedNotificationMessageRequest">
+    <wsdl:part xmlns:q11="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q11:GetFailedNotificationMessageRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetFailedNotificationMessageRequest_Headers">
+    <wsdl:part name="ProjectData" element="tns:ProjectData" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetFailedNotificationMessageResponse">
+    <wsdl:part xmlns:q12="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q12:GetFailedNotificationMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQueuedNotificationMessageRequest">
+    <wsdl:part xmlns:q13="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q13:GetQueuedNotificationMessageRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetQueuedNotificationMessageRequest_Headers">
+    <wsdl:part name="ProjectData" element="tns:ProjectData" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetQueuedNotificationMessageResponse">
+    <wsdl:part xmlns:q14="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q14:GetQueuedNotificationMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSentNotificationMessageRequest">
+    <wsdl:part xmlns:q15="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q15:GetSentNotificationMessageRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetSentNotificationMessageRequest_Headers">
+    <wsdl:part name="ProjectData" element="tns:ProjectData" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetSentNotificationMessageResponse">
+    <wsdl:part xmlns:q16="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q16:GetSentNotificationMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNotificationMessageRequest">
+    <wsdl:part xmlns:q17="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q17:GetNotificationMessageRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetNotificationMessageRequest_Headers">
+    <wsdl:part name="ProjectData" element="tns:ProjectData" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetNotificationMessageResponse">
+    <wsdl:part xmlns:q18="http://www.bss.biz/NotificationService/Send/messages" name="parameters" element="q18:GetNotificationMessageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISendService">
+    <wsdl:operation name="SendNotification">
+      <wsdl:input wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/SendNotification" name="SendNotificationRequest" message="tns:SendNotificationRequest" />
+      <wsdl:output wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/SendNotificationResponse" name="SendNotificationResponse" message="tns:SendNotificationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationFailedMessages">
+      <wsdl:input wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationFailedMessages" name="FindNotificationFailedMessagesRequest" message="tns:FindNotificationFailedMessagesRequest" />
+      <wsdl:output wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationFailedMessagesResponse" name="FindNotificationFailedMessagesResponse" message="tns:FindNotificationFailedMessagesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationSentMessages">
+      <wsdl:input wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationSentMessages" name="FindNotificationSentMessagesRequest" message="tns:FindNotificationSentMessagesRequest" />
+      <wsdl:output wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationSentMessagesResponse" name="FindNotificationSentMessagesResponse" message="tns:FindNotificationSentMessagesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationQueuedMessages">
+      <wsdl:input wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationQueuedMessages" name="FindNotificationQueuedMessagesRequest" message="tns:FindNotificationQueuedMessagesRequest" />
+      <wsdl:output wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationQueuedMessagesResponse" name="FindNotificationQueuedMessagesResponse" message="tns:FindNotificationQueuedMessagesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="FindNotificationAllMessages">
+      <wsdl:input wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationAllMessages" name="FindNotificationAllMessagesRequest" message="tns:FindNotificationAllMessagesRequest" />
+      <wsdl:output wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/FindNotificationAllMessagesResponse" name="FindNotificationAllMessagesResponse" message="tns:FindNotificationAllMessagesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFailedNotificationMessage">
+      <wsdl:input wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/GetFailedNotificationMessage" name="GetFailedNotificationMessageRequest" message="tns:GetFailedNotificationMessageRequest" />
+      <wsdl:output wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/GetFailedNotificationMessageResponse" name="GetFailedNotificationMessageResponse" message="tns:GetFailedNotificationMessageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueuedNotificationMessage">
+      <wsdl:input wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/GetQueuedNotificationMessage" name="GetQueuedNotificationMessageRequest" message="tns:GetQueuedNotificationMessageRequest" />
+      <wsdl:output wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/GetQueuedNotificationMessageResponse" name="GetQueuedNotificationMessageResponse" message="tns:GetQueuedNotificationMessageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSentNotificationMessage">
+      <wsdl:input wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/GetSentNotificationMessage" name="GetSentNotificationMessageRequest" message="tns:GetSentNotificationMessageRequest" />
+      <wsdl:output wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/GetSentNotificationMessageResponse" name="GetSentNotificationMessageResponse" message="tns:GetSentNotificationMessageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationMessage">
+      <wsdl:input wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/GetNotificationMessage" name="GetNotificationMessageRequest" message="tns:GetNotificationMessageRequest" />
+      <wsdl:output wsaw:Action="http://www.bss.biz/NotificationService/Send/services/ISendService/GetNotificationMessageResponse" name="GetNotificationMessageResponse" message="tns:GetNotificationMessageResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="SendService">
+    <wsdl:port name="SendService" binding="i0:SendService">
+      <soap12:address location="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="SendService1" binding="i0:SendService1">
+      <soap12:address location="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService/Compressed" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService/Compressed</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="SendService2" binding="i0:SendService2">
+      <soap:address location="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService/basic" />
+    </wsdl:port>
+    <wsdl:port name="SendService3" binding="i0:SendService3">
+      <soap12:address location="wss://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService/socket" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>wss://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService/socket</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

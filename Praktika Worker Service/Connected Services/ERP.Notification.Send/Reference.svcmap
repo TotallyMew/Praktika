@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="3a04829c-126d-4419-a54c-8852f3c09b9f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SendService.xsd" MetadataType="Schema" ID="a11fa76d-763e-4750-bca9-6ad0be3a71eb" SourceId="1" SourceUrl="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd7" />
+    <MetadataFile FileName="SendService1.xsd" MetadataType="Schema" ID="a324805a-87bf-4382-9a7e-9f50dd5eeb3b" SourceId="1" SourceUrl="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd6" />
+    <MetadataFile FileName="SendService.wsdl" MetadataType="Wsdl" ID="d648bbda-59ac-41a6-b496-961514881e14" SourceId="1" SourceUrl="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?wsdl=wsdl0" />
+    <MetadataFile FileName="SendService2.xsd" MetadataType="Schema" ID="9b99572e-dd10-4845-82d2-29663f186c5e" SourceId="1" SourceUrl="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd4" />
+    <MetadataFile FileName="SendService3.xsd" MetadataType="Schema" ID="a0da5dd8-f625-4ba8-9b8e-91ae1bf97727" SourceId="1" SourceUrl="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd3" />
+    <MetadataFile FileName="SendService4.xsd" MetadataType="Schema" ID="e03b1f4e-4a24-4a48-859f-c176a6d597cf" SourceId="1" SourceUrl="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd2" />
+    <MetadataFile FileName="SendService5.xsd" MetadataType="Schema" ID="6df3d992-bb93-4317-a81c-9f123e4f1229" SourceId="1" SourceUrl="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd1" />
+    <MetadataFile FileName="SendService6.xsd" MetadataType="Schema" ID="14988b3c-d08c-4b0a-bda1-d28d6d085bac" SourceId="1" SourceUrl="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd0" />
+    <MetadataFile FileName="SendService7.xsd" MetadataType="Schema" ID="a0e233aa-611f-4c49-9ad0-e7d38cb819e3" SourceId="1" SourceUrl="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?xsd=xsd5" />
+    <MetadataFile FileName="SendService1.wsdl" MetadataType="Wsdl" ID="4e3cd317-acde-4489-adf8-24a2a1f8ee6c" SourceId="1" SourceUrl="https://qa.bss.biz:8001/NotificationSendHost/BSSIT.QA/v2/service/SendService?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

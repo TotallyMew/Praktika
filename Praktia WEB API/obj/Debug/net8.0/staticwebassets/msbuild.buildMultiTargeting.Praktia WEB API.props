@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Praktia WEB API.props" />
+</Project>

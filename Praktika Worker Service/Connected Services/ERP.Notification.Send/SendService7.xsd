@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.bss.biz/NotificationService/Send/services" elementFormDefault="qualified" targetNamespace="http://www.bss.biz/NotificationService/Send/services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ProjectData" nillable="true" type="xs:anyType" />
+  <xs:element name="UserName" nillable="true" type="xs:string" />
+</xs:schema>
